@@ -4,43 +4,37 @@ const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema({
   day: {
-    type: String,
-    trim: true,
-    required: "Enter a name for exercise"
+    type: Date,
+    default: ()=> new Date()
   },
   exercises: [{
+    type:{
+      type: String,
+      trim: true,
+      required: "Enter an exercise type"
+    },
     name: {
       type: String,
       trim: true,
       required: "Enter a name"
     },
     duration: {
-      type: String,
-      trim: true,
-      required: "Enter and duration"
+      type: Number,
+      required: "Enter a duration"
     },
     weight: {
-      type: String,
-      trim: true,
-      required: "Enter a weight"
+      type: Number
     },
     reps: {
-      type: String,
-      trim: true,
-      required: "Enter number of reps"
+      type: Number
     },
     sets: {
-      type: String,
-      trim: true,
-      required: "Enter number of sets"
+      type: Number
     },
     distance: {
-      type: String,
-      trim: true,
-      required: "Enter distance"
+      type: Number
     },
-  }
-]
+  }]
 },
  {
   toJSON: {
